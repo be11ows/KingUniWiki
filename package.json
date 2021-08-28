@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "mongoose": "^6.0.2"
+  },
+  "name": "wiki-resources",
+  "description": "",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kosa2020/KingUniWiki.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kosa2020/KingUniWiki/issues"
+  },
+  "homepage": "https://github.com/kosa2020/KingUniWiki#readme"
+}

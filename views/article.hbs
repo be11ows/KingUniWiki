@@ -11,7 +11,7 @@
     <div>
         <aside>
             <div class="center">
-                <img class="logo" src="img/logo.png" alt="logo">
+                <img class="logo" src="/img/logo.png" alt="logo">
             </div>
 
             <nav>
@@ -30,8 +30,10 @@
                 <a href="/login">Login</a>
                 <a href="/register">Register</a>
                 {{/unless}}
+                {{#if username}}
+                <span>Welcome, {{username}}!</span>
+                {{/if}}
                 {{#if loggedIn}}
-                {{!-- <span>Welcome, Bob!</span> --}}
                 <a href="/logout">[Logout]</a>
                 {{/if}}
             </header>

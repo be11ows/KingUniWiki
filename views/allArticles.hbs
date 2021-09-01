@@ -21,7 +21,9 @@
                     <input type="text">
                     <input type="submit" value="Search">
                 </form>
+                {{#if loggedIn}}
                 <a href="/create">Create New Article</a>
+                {{/if}}
             </nav>
         </aside>
         <div id="container">
@@ -30,8 +32,10 @@
                 <a href="/login">Login</a>
                 <a href="/register">Register</a>
                 {{/unless}}
+                {{#if username}}
+                <span>Welcome, {{username}}!</span>
+                {{/if}}
                 {{#if loggedIn}}
-                {{!-- <span>Welcome, Bob!</span> --}}
                 <a href="/logout">[Logout]</a>
                 {{/if}}
             </header>

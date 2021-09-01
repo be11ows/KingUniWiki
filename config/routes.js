@@ -6,14 +6,14 @@ const registerControl = require('../controllers/registerControl');
 const loginControl = require('../controllers/loginControl');
 const createControl = require('../controllers/createControl');
 const editControl = require('../controllers/editControl');
-const deleteControl = require('../controllers/deleteControl');
 const searchResultsControl = require('../controllers/searchResultsControl');
 const logoutControl = require('../controllers/logoutControl');
 
 // const allArticlesControlPOST = require('../controllers/allArticlesControlPOST');
 // const articleControlPOST = require('../controllers/articleControlPOST');
 const createControlPOST = require('../controllers/createControlPOST');
-// const editControlPOST = require('../controllers/editControlPOST');
+const editControlPOST = require('../controllers/editControlPOST');
+const deleteControlPOST = require('../controllers/deleteControlPOST');
 // const indexControlPOST = require('../controllers/indexControlPOST');
 const loginControlPOST = require('../controllers/loginControlPOST');
 const registerControlPOST = require('../controllers/registerControlPOST');
@@ -31,13 +31,14 @@ module.exports = (app) => {
     app.get('/allArticles', allArticlesControl);
     app.get('/create', createControl);
     app.get('/edit/:id', editControl);
-    app.get('/delete/:id', deleteControl);
     app.get('/logout', logoutControl);
     
     // the app.posts
     app.post('/register', registerControlPOST);
     app.post('/login', loginControlPOST);
     app.post('/create', createControlPOST);
+    app.post('/edit/:id', editControlPOST);
+    app.post('/delete/:id', deleteControlPOST);
 
     // the catch-all for everything else
     app.get("/*", four04Control);

@@ -20,6 +20,7 @@ const registerControlPOST = require('../controllers/registerControlPOST');
 // const searchResultsControlPOST = require('../controllers/searchResultsControlPOST');
 
 const four04Control = require('../controllers/four04Control');
+const { populate } = require('../models/User');
 
 module.exports = (app) => {
 

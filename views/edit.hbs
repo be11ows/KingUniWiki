@@ -28,13 +28,14 @@
         </aside>
         <div id="container">
             <header>
-                 {{#unless loggedIn}}
+               {{#unless loggedIn}}
                 <a href="/login">Login</a>
                 <a href="/register">Register</a>
                 {{/unless}}
-                {{#if username}}
+                {{#with username}}
                 <span>Welcome, {{username}}!</span>
-                {{/if}}
+                {{/with}}
+
                 {{#if loggedIn}}
                 <a href="/logout">[Logout]</a>
                 {{/if}}
@@ -47,6 +48,7 @@
                     <div class="spacer">
                         {{#with article}}
                         <form>
+                            {{#with article}}
                             <label>Article title</label>
                             <h3>{{articleTitle}}</h3>
                             <label>Content</label>
@@ -54,6 +56,7 @@
                             {{content}}
                             </textarea>
                             <input type="submit" value="Submit">
+                            {{/with}}
                         </form>
                         {{/with}}
                     </div>

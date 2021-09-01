@@ -1,31 +1,45 @@
 // require controllers
+const indexControl = require('../controllers/indexControl');
+const articleControl = require('../controllers/articleControl');
+const allArticlesControl = require('../controllers/allArticlesControl');
+const registerControl = require('../controllers/registerControl');
+const loginControl = require('../controllers/loginControl');
+const createControl = require('../controllers/createControl');
+const editControl = require('../controllers/editControl');
+const deleteControl = require('../controllers/deleteControl');
+const searchResultsControl = require('../controllers/searchResultsControl');
+const logoutControl = require('../controllers/logoutControl');
+
+// const allArticlesControlPOST = require('../controllers/allArticlesControlPOST');
+// const articleControlPOST = require('../controllers/articleControlPOST');
+const createControlPOST = require('../controllers/createControlPOST');
+// const editControlPOST = require('../controllers/editControlPOST');
+// const indexControlPOST = require('../controllers/indexControlPOST');
+const loginControlPOST = require('../controllers/loginControlPOST');
+const registerControlPOST = require('../controllers/registerControlPOST');
+// const searchResultsControlPOST = require('../controllers/searchResultsControlPOST');
+
+const four04Control = require('../controllers/four04Control');
 
 module.exports = (app) => {
-    app.get('/', (req, res) => {
-        res.send('/ ==> we are not biological threats to each other!');
-      });
-      app.get('/login', (req, res) => {
-        res.send('login  ==> stand against tyranny!');
-      });
-      app.get('/register', (req, res) => {
-        res.send('register  ==> be the Light in the darkness!');
-      });
-      app.get('/view', (req, res) => {
-        res.send('view ==> i see potential and movement toward THE GREAT AWAKENING!');
-      });
-      app.get('/create', (req, res) => {
-        res.send('create  ==> be creative, be fruitful and multiply!');
-      });
-      app.get('/edit', (req, res) => {
-        res.send('edit  ==> question the official narrative!');
-      });
-      app.get('/delete', (req, res) => {
-        res.send('delete  ==> remove death cult influence from your life!');
-      });
-      app.get('/logout', (req, res) => {
-        res.send('logout ==> logout of transhumanist agendas.  no graphene oxide for me thank you!');
-      });
-      app.get("/*", (req, res) => {
-          res.send('* wha, wha ==> 404 PAGE NOT FOUND');
-      });
+
+    // the app.gets
+    app.get('/', indexControl);
+    app.get('/login', loginControl);
+    app.get('/register', registerControl);
+    app.get('/article/:id', articleControl);
+    app.get('/allArticles', allArticlesControl);
+    app.get('/create', createControl);
+    app.get('/edit/:id', editControl);
+    app.get('/delete/:id', deleteControl);
+    app.get('/logout', logoutControl);
+    
+    // the app.posts
+    app.post('/register', registerControlPOST);
+    app.post('/login', loginControlPOST);
+    app.post('/create', createControlPOST);
+
+    // the catch-all for everything else
+    app.get("/*", four04Control);
+
 };

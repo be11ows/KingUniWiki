@@ -9,7 +9,7 @@ module.exports = articleControl = (req, res) => {
     
     Article.findById(req.params.id, function (err, article) {
 
-        console.log('article is ', article);
+        //console.log('article is ', article);
         if (err) return console.error(err);
         res.render('article', { article });
            

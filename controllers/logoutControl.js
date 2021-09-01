@@ -4,5 +4,7 @@ module.exports = logoutControl = (req, res) => {
 
     res.clearCookie("jwt");
 
+    res.clearCookie('username');
+
     res.redirect("/");
 };

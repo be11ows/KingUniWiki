@@ -26,10 +26,16 @@
         </aside>
         <div id="container">
             <header>
+                 {{#unless loggedIn}}
                 <a href="/login">Login</a>
                 <a href="/register">Register</a>
-                {{!-- <span>Welcome, Bob!</span> --}}
+                {{/unless}}
+                {{#if username}}
+                <span>Welcome, {{username}}!</span>
+                {{/if}}
+                {{#if loggedIn}}
                 <a href="/logout">[Logout]</a>
+                {{/if}}
             </header>
             <main>
                 <h1>Welcome to KingUni Wiki!</h1>

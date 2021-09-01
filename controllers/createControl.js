@@ -1,4 +1,8 @@
 
 module.exports = createControl = (req, res) => {
-    res.render('create');
+
+    const loggedIn = req.cookies.loggedIn;
+    const username = req.cookies.username;
+
+    res.render('create', { loggedIn, username });
 };

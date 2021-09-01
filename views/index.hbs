@@ -32,10 +32,10 @@
                 <a href="/login">Login</a>
                 <a href="/register">Register</a>
                 {{/unless}}
-                {{#if loggedIn}}
-                {{#with username}}
+                {{#if username}}
                 <span>Welcome, {{username}}!</span>
-                {{/with}}
+                {{/if}}
+                {{#if loggedIn}}
                 <a href="/logout">[Logout]</a>
                 {{/if}}
             </header>

@@ -6,5 +6,6 @@ module.exports = logoutControl = (req, res) => {
 
     res.clearCookie('username');
 
+
     res.redirect("/");
 };

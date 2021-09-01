@@ -21,7 +21,9 @@
                     <input type="text">
                     <input type="submit" value="Search">
                 </form>
+                {{#if loggedIn}}
                 <a href="/create">Create New Article</a>
+                {{/if}}
             </nav>
         </aside>
         <div id="container">
@@ -33,6 +35,7 @@
                 {{#with username}}
                 <span>Welcome, {{username}}!</span>
                 {{/with}}
+
                 {{#if loggedIn}}
                 <a href="/logout">[Logout]</a>
                 {{/if}}
@@ -43,6 +46,7 @@
                     <h2>Edit article
                     </h2>
                     <div class="spacer">
+                        {{#with article}}
                         <form>
                             {{#with article}}
                             <label>Article title</label>
@@ -54,6 +58,7 @@
                             <input type="submit" value="Submit">
                             {{/with}}
                         </form>
+                        {{/with}}
                     </div>
                 </section>
             </main>

@@ -87,8 +87,19 @@
   color: white;
 }
 
+img {
+  height: 22px;
+  align-self: center;
+}
+
+.home, .profile, .messages,
+.history, .tasks, .community,
+.settings, .support, .privacy {
+  display: flex;
+}
+
 .sidebar div {
-  padding: 25px;
+  padding: 5px;
   font-size: 20px;
 }
 
@@ -127,7 +138,7 @@
   background-color: white;
   border-radius: 10px;
   padding: 15px;
-  border-left: 5px solid gold;
+  border-left: 8px solid gold;
 }
 
 .announcements,
